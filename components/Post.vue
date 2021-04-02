@@ -19,8 +19,8 @@
                 <button class="buttons">Share</button>
             </div>
             <div>
-                <button class="btn btn-primary">Add to Wishlist</button>
-                <button class="btn btn-success">Buy</button>
+                <button class="btn btn-primary" @click="$emit('add-to-wishlist', post)">Add to Wishlist</button>
+                <button class="btn btn-success" @click="$emit('add-to-bought-list', post)">Buy</button>
             </div>
         </div>
     </div>

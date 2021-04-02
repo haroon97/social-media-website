@@ -1,65 +1,20 @@
 <template>
     <div class="row">
         <div class="col-6">
-            <h4 class="text">Wishlist</h4>
+            <h4 class="text">{{ title }}</h4>
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Body</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-6">
-            <h4 class="text">Buy</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <tr v-for="item in posts" :key="item.id" >
+                    <th scope="row">{{ item.id }}</th>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.body }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -70,13 +25,14 @@
 
 <script>
     export default {
-
+        props: ['posts', 'title'],
     }
 </script>
 
 <style scoped>
     .row {
         padding-top: 2rem;
+        width: 50%;
     }
     .text {
         text-align: center;
