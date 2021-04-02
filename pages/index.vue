@@ -1,7 +1,8 @@
 <template>
     <div class="parentContainer" v-if="!$fetchState.pending">
         <input v-model="userInput" placeholder="Search Posts" class="input"/>
-        <Post v-for="post in filteredPosts" :key="post.id" :post="post" />
+        <Post v-for="post in filteredPosts.slice(0,5)" :key="post.id" :post="post" />
+        <MyPosts />
     </div>
     <div v-else>
         Loading...
@@ -13,6 +14,8 @@ export default {
     data() {
         return {
             posts: [],
+            wishlist: [],
+            boughtItems: [],
             userInput: '',
         }
     },
