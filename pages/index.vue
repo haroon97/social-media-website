@@ -1,12 +1,11 @@
 <template>
-  <div class="container" v-if="!$fetchState.pending">
-      <input v-model="userInput" placeholder="Search Posts" class="input"/>
-      <Post v-for="post in filteredPosts" :key="post.id" :post="post" />
-  </div>
-  <div v-else>
-      Loading...
-  </div>
-
+    <div class="parentContainer" v-if="!$fetchState.pending">
+        <input v-model="userInput" placeholder="Search Posts" class="input"/>
+        <Post v-for="post in filteredPosts" :key="post.id" :post="post" />
+    </div>
+    <div v-else>
+        Loading...
+    </div>
 </template>
 
 <script>
@@ -34,7 +33,15 @@ export default {
 </script>
 
 <style scoped>
+    .parentContainer {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
     .input {
-        width: 100%;
+        margin-top: 2rem;
+        padding: 0.5rem 0.5rem;
+        width: 35%;
     }
 </style>

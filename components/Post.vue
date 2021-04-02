@@ -1,7 +1,7 @@
 <template>
     <div class="postContainer">
         <div class="userInfo">
-            <img :src="require('@/assets/images/user.jpg')" class="img"/>
+            <img :src="require('@/assets/images/pic.jpg')" class="img"/>
             <div class="nameContainer">
                 <h4 class="username">@Haroon97</h4>
                 <span class="name">Haroon Ahmed</span>
@@ -13,9 +13,15 @@
             <p class="body">{{ post.body }}</p>
         </div>
         <div class="postInteraction">
-            <button class="buttons">Like</button>
-            <button class="buttons">Comment</button>
-            <button class="buttons">Share</button>
+            <div>
+                <button class="buttons">Like</button>
+                <button class="buttons">Comment</button>
+                <button class="buttons">Share</button>
+            </div>
+            <div>
+                <button class="btn btn-primary">Add to Wishlist</button>
+                <button class="btn btn-success">Buy</button>
+            </div>
         </div>
     </div>
 </template>
@@ -71,6 +77,9 @@
         background-color: #F8F9F9;
         border: 1px solid #D5DBDB;
         padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .buttons {
         color: #3498DB;
