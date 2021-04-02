@@ -3,7 +3,8 @@
         <input v-model="userInput" placeholder="Search Posts" class="input"/>
         <Post
             v-for="post in filteredPosts.slice(0,5)"
-            :key="post.id" :post="post"
+            :key="post.id"
+            :post="post"
             v-on:add-to-wishlist="addToWishlist"
             v-on:add-to-bought-list="addToBoughtList"
         />
@@ -63,9 +64,6 @@ export default {
         margin-top: 2rem;
         padding: 0.5rem 0.5rem;
         width: 35%;
-    }
-    .myItems {
-        display: flex;
     }
 
 </style>

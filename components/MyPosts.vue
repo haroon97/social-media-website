@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-6">
+        <div class="col-12">
             <h4 class="text">{{ title }}</h4>
             <table class="table">
                 <thead>
@@ -32,7 +32,6 @@
 <style scoped>
     .row {
         padding-top: 2rem;
-        width: 50%;
     }
     .text {
         text-align: center;
